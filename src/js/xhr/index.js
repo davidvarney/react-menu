@@ -1,23 +1,11 @@
 import axios from "axios";
 
-let postOrder = function(data) {
-  return axios.post("http://104.131.53.79/orders", data)
-    .then(function(response) {
-      console.log(response.data);
-      console.log(response.status);
-    });
+let getCategory = function(category_id) {
+  return axios.get("http://104.131.53.79/item_types/" + category_id);
 }
 
-let getMenuCategories = function() {
+let getCategories = function() {
   return axios.get("http://104.131.53.79/item_types");
-}
-
-let getOrderItemsForOrder = function(order_id) {
-  return axios.get("http://104.131.53.79/order_items_by_order_id/" + order_id)
-    .then(function(response) {
-      console.log(response.data);
-      console.log(response.status);
-    });
 }
 
 let getCategoryItems = function(category_id) {
@@ -28,8 +16,16 @@ let getItems = function() {
   return axios.get("http://104.131.53.79/items");
 }
 
+let getItem = function(item_id) {
+  return axios.get("http://104.131.53.79/items/" + item_id);
+}
+
 let getSizes = function() {
   return axios.get("http://104.131.53.79/sizes");
 }
 
-export { getMenuCategories, postOrder, getOrderItemsForOrder, getCategoryItems, getItems, getSizes }
+let getExtras = function() {
+  return axios.get("http://104.131.53.79/extras");
+}
+
+export { getCategory, getCategories, getCategoryItems, getItems, getItem, getSizes, getExtras }

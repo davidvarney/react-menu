@@ -6,9 +6,9 @@ import Footer from "./Footer";
 
 let App = function(props) {
   return (
-    <div className="site-wrapper-inner">
-      <div className="cover-container">
-        <Header route={props.location.pathname} />
+    <div>
+      <Header route={props.location.pathname} />
+      <div className="container">
         {props.children}
         <Footer />
       </div>
