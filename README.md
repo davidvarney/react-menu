@@ -23,4 +23,4 @@ Since we have webpack-dev-server installed via our package.json file and a pre-w
 $ npm run dev
 ```
 ##Step 5
-Open your browser and go to http://localhost:8080
+Open your browser and go to http://localhost:8080/
